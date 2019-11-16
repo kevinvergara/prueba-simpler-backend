@@ -17,7 +17,7 @@ app.listen('8080', function() {
 //======================================
 
 //========rutas y respuestas=============
-
+//todos los productos
 app.get("/all-products",function(req, res){
   api.getProducts()
     .then((response)=>{
@@ -26,6 +26,19 @@ app.get("/all-products",function(req, res){
     })
     .catch(error =>{
       console.log("response 500 all products");
+      res.status(500).json({error: error});
+    });
+});
+
+//producto por id
+app.get("/product/:id",function(req, res){
+  api.getProductById(req.params.id)
+    .then((response)=>{
+      console.log("response 200 get product by id");
+      res.status(200).send(response);
+    })
+    .catch(error =>{
+      console.log("response 500 get product by id");
       res.status(500).json({error: error});
     });
 });
