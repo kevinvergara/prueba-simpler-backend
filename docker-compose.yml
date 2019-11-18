@@ -25,6 +25,6 @@ services:
     volumes:
       - ./views:/usr/share/nginx/html
     ports:
-      - "8089:80"
+      - "80:80"
     links:
       - web_back
