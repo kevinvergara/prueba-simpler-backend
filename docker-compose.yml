@@ -8,7 +8,6 @@ services:
       - "6379:6379"
     entrypoint: redis-server --appendonly yes
     restart: always
-
   web_back:
     build: .
     container_name: simpler_backend
@@ -19,6 +18,7 @@ services:
       - '8080:8080'
     links:
       - redis_back
+    restart: always
   web_front:
     container_name: simpler_frontend
     image: nginx
@@ -28,3 +28,4 @@ services:
       - "80:80"
     links:
       - web_back
+    restart: always
