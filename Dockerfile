@@ -22,10 +22,14 @@ ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json /app/package.json
 RUN npm install
 
+RUN npm install -g nodemon
+
 # add app
 COPY . /app
 
 EXPOSE 8080
 
 # start app
-CMD [ "npm","start" ]
+#CMD [ "npm","start" ]
+
+CMD nodemon -L watch servidor/server.js

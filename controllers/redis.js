@@ -1,6 +1,6 @@
 'use strict';
 var redis = require('redis');
-var client = redis.createClient();
+var client = redis.createClient(6379,"redis_back");
 
 function setRedis(key, data){
     console.log("guardando en redis");

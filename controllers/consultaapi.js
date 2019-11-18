@@ -5,9 +5,7 @@ const datos_parametros = require('../assets/productos');
 
 const api = "https://simple.ripley.cl/api/v2/products";
 
-const error_arreglo = [
-    4,3,2,7,54,24,75,53,87,85
-];
+const error_arreglo = [4,3,2,7,54,24,75,53,87,85];
 
 async function getProducts() {
     return new Promise(async (resolve, reject)=>{
