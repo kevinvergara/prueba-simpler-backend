@@ -24,6 +24,7 @@ services:
     image: nginx
     volumes:
       - ./views:/usr/share/nginx/html
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
     ports:
       - "80:80"
     links:
