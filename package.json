@@ -4,7 +4,7 @@
   "description": "prueba para cargo de ing desarrollador",
   "main": "servidor/server.js",
   "scripts": {
-    "test": "mocha spec",
+    "test": "jest --detectOpenHandles --no-cache",
     "start": "node servidor/server.js"
   },
   "author": "kevin vergara m",
@@ -12,7 +12,9 @@
   "dependencies": {
     "axios": "0.16.2",
     "body-parser": "^1.19.0",
+    "coverage": "^0.4.1",
     "express": "^4.17.1",
+    "jest": "^24.9.0",
     "mocha": "^6.2.0",
     "redis": "^2.8.0"
   },

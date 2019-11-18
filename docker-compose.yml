@@ -19,3 +19,12 @@ services:
       - '8080:8080'
     links:
       - redis_back
+  web_front:
+    container_name: simpler_frontend
+    image: nginx
+    volumes:
+      - ./views:/usr/share/nginx/html
+    ports:
+      - "8089:80"
+    links:
+      - web_back
